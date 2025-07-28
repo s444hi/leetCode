@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        int stringLength = s.length();
+        int counter = 0;
+
+        ArrayList<Character> original = new ArrayList<>();
+        for (int i = 0; i < s.length(); i++) {
+            original.add(s.charAt(i));
+        }
+
+        ArrayList<Character> anagram = new ArrayList<>();
+        for (int i = 0; i < t.length(); i++) {
+            anagram.add(t.charAt(i));
+        }
+
+        for (int i = 0; i < original.size(); i++) {
+            for (int j = 0; j < anagram.size(); j++) {
+                if (original.get(i).equals(anagram.get(j))) {
+                    counter++;
+                    anagram.remove(j);
+                }
+            }
+        }
+
+        if (counter == stringLength) {
+            return true;
+        }
+
+        return false;
+
+    }
+}
