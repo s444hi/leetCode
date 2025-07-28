@@ -3,6 +3,10 @@ class Solution {
         int stringLength = s.length();
         int counter = 0;
 
+        if (s.length() != t.length()) {
+            return false;
+        }
+
         ArrayList<Character> original = new ArrayList<>();
         for (int i = 0; i < s.length(); i++) {
             original.add(s.charAt(i));
