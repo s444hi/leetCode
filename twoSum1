@@ -4,11 +4,13 @@ class Solution {
 
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == 9) {
+                if (nums[i] + nums[j] == target) {
                     answer[0] = i;
                     answer[1] = j;
                     return answer;
-                } 
+                } else {
+                    continue;
+                }
             }
         }
         return answer;
