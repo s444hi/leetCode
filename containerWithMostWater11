@@ -1,0 +1,25 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int area = 0;
+
+        for (int i = 0; i < height.length; i++) {
+            for (int j = i + 1; j < height.length; j++) {
+                int base = j - i;
+                int currentArea;
+
+                if (height[i] > height[j]) {
+                    currentArea = base * height[j];
+                } else {
+                    currentArea = base * height[i];
+                }
+
+                if (currentArea > area) {
+                    area = currentArea;
+                }
+            }
+        }
+
+        return area;
+
+    }
+}
