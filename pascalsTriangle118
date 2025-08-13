@@ -12,7 +12,7 @@ class Solution {
                     pascal.get(i).add(1);
                 } else {
                     pascal.get(i).add(1);
-                    
+                    for (int k = 0; k < 
                 }
             }
         }
