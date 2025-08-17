@@ -12,7 +12,7 @@ class Solution {
         List<Integer> answers = new ArrayList<>();
 
         for (List<Integer> inner : colors.values()) {
-            answers.addAll(inner);
+            answers.addAll(inner)
         }
     }
 }
