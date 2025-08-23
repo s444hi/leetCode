@@ -9,6 +9,7 @@ class Solution {
             colors.get(i).add(nums[i]);
         }
 
+
         List<Integer> answers = new ArrayList<>();
 
         for (List<Integer> inner : colors.values()) {
