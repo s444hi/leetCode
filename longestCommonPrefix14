@@ -4,6 +4,7 @@ class Solution {
             char [] letters = strs[i].toCharArray;
             for (int j = 0; j < strs.length; j++) {
                 char []
+
             }
         }
     }
