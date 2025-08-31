@@ -1,5 +1,16 @@
 class Solution {
     public String solveEquation(String equation) {
-        
+        String[] parts = equation.split("=");
+        String left = parts[0];
+        String right = parts[1];
+
+        int[] leftResult = parseExpression(left);
+        int leftXCoeff = leftResult[0];
+        int leftConstant = leftResult[1];
+
+        int[] rightResult = parseExpression(right);
+        int rightXCoeff = rightResult[0];
+        int rightConstant = rightResult[1];
+
     }
 }
