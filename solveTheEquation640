@@ -12,6 +12,17 @@ class Solution {
         int rightXCoeff = rightResult[0];
         int rightConstant = rightResult[1];
 
+        int finalXCoeff = leftXCoeff - rightXCoeff;
+        int finalConstant = rightConstant - leftConstant;
+
+        if (finalXCoeff != 0) {
+            return "x=" + (finalConstant / finalXCoeff);
+        } else if (finalConstant == 0) {
+            return "Infinite solutions";
+        } else {
+            return "No solution";
+        }
+
     }
 
     private int[] parse(String expression) {
@@ -40,20 +51,21 @@ class Solution {
 
         for (int j = 0; j < expression.length(); j++) {
             if (Character.isDigit(expression.charAt(j))) {
-    if (j + 1 < expression.length() && expression.charAt(j + 1) == 'x') {
-        continue;
-    }
+                if (j + 1 < expression.length() && expression.charAt(j + 1) == 'x') {
+                    continue;
+                }
 
-    if (j == 0) {
-        constant += expression.charAt(j) - '0';
-    } else if (expression.charAt(j - 1) == '+') {
-        constant += expression.charAt(j) - '0';
-    } else if (expression.charAt(j - 1) == '-') {
-        constant -= expression.charAt(j) - '0';
-    } else {
-        constant += expression.charAt(j) - '0';
-    }
-}
-        return new int[] {xCoeff, constant};   
+                if (j == 0) {
+                    constant += expression.charAt(j) - '0';
+                } else if (expression.charAt(j - 1) == '+') {
+                    constant += expression.charAt(j) - '0';
+                } else if (expression.charAt(j - 1) == '-') {
+                    constant -= expression.charAt(j) - '0';
+                } else {
+                    constant += expression.charAt(j) - '0';
+                }
+            }
+        }
+        return new int[] { xCoeff, constant };
     }
 }
